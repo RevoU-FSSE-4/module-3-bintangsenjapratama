@@ -48,3 +48,32 @@ const getTaskData = async () => {
   );
   return await response.json();
 };
+
+// add task
+const addTask = () => {
+  if (newTaskId.value === "") {
+    newTaskId.placeholder = "You must add something";
+  } else {
+    let li = document.createElement("li");
+    li.innerHTML = newTaskId.value;
+    taskListId.appendChild(li);
+
+    let span = document.createElement("span");
+    span.innerHTML = "\u00d7";
+    li.appendChild(span);
+  }
+  taskListId.value = "";
+};
+
+// done / remove task completion
+taskListId.addEventListener(
+  "click",
+  function (elem) {
+    if (elem.target.tagName === "LI") {
+      elem.target.classList.toggle("checked");
+    } else if (elem.target.tagName === "SPAN") {
+      elem.target.parentElement.remove();
+    }
+  },
+  false
+);
