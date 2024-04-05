@@ -2,8 +2,8 @@
 
 // existing variables / constan
 export {};
-const taskListId = document.getElementById("taskList") as HTMLInputElement;
-const newTaskId = document.getElementById("newTask") as HTMLInputElement;
+const taskListId = document.getElementById("taskList") as HTMLInputElement; // don't know why when type is set to HTMLElement, it says it doesn't have value property / placeholder property
+const newTaskId = document.getElementById("newTask") as HTMLInputElement; // so I come up using what explains in this thread https://stackoverflow.com/questions/12989741/the-property-value-does-not-exist-on-value-of-type-htmlelement
 const addTaskBtnId = document.getElementById("addTaskBtn") as HTMLInputElement;
 
 // fetch API function
